@@ -19,7 +19,7 @@ const workSlides = {
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
+          path: "/Frame_1.png",
           link: "http://example.com",
         },
         {
@@ -86,6 +86,7 @@ const WorkSlider = () => {
                     alt={image.title}
                     width={500}
                     height={300}
+                    className=""
                   />
 
                   {/* overlay gradient */}

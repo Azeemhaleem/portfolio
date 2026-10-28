@@ -26,33 +26,51 @@ export const aboutData = [
     title: "skills",
     info: [
       {
-        title: "Web Development",
-        icons: [
-          FaHtml5,
-          FaCss3,
-          FaJs,
-          FaReact,
-          SiNextdotjs,
-          SiFramer,
-          FaWordpress,
-        ],
+        title: "Programming Languages",
+        stage: "Python, Java, JavaScript, C/C++, SQL",
       },
       {
-        title: "UI/UX Design",
-        icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
+        title: "Machine Learning and AI",
+        stage:
+          "TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn",
+      },
+      {
+        title: "Web development and Version control",
+        stage:
+          "Node JS, Express JS, React JS, Flask, Bootstrap, Tailwind, Git",
+      },
+      {
+        title: "Databases",
+        stage: "SQL Server, MySQL, Mongo DB ",
+      },
+      {
+        title: "Embedded Systems & IoT",
+        stage: "Arduino, ESP32, Raspberry Pi, Sensor Integrations",
       },
     ],
   },
   {
-    title: "awards",
+    title: "projects",
     info: [
       {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
+        title: "Smart Wearable Health Monitoring System (IoT)",
+        stage: "ESP32, MAX30102, MQTT, FIWARE, React, MongoDB",
       },
       {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
+        title: "Music Recommendation System (Emotion-Based)",
+        stage: "TensorFlow, NumPy, Pandas, Mini-Xception",
+      },
+      {
+        title: "Handwritten Digit Classification",
+        stage: "TensorFlow, NumPy, Pandas, LeNet",
+      },
+      {
+        title: "Fine Management System",
+        stage: "React JS, Laravel, Figma",
+      },
+      {
+        title: "University Event Management System",
+        stage: "React JS, Node.js, Express JS, MongoDB",
       },
     ],
   },
@@ -60,33 +78,29 @@ export const aboutData = [
     title: "experience",
     info: [
       {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
+        title: "AI Engineer Intern - Curve Up FZ LLC",
+        stage: "September 2026 – Present",
       },
       {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
+        title: "Freelance UI UX Designer - Fiverr",
+        stage: "2023 - 2024",
       },
       {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
+        title: "Freelance Mathematics Teacher",
+        stage: "2022 - Present",
       },
     ],
   },
   {
-    title: "credentials",
+    title: "education",
     info: [
       {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
+        title: "BCom(Hons) in Computer Science - Undergraduate",
+        stage: "University of Sri Jayawerdanapura",
       },
       {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
+        title: "BTEC HND in Electrical & Electronic Engineering",
+        stage: "Completed",
       },
     ],
   },
@@ -96,141 +110,153 @@ const About = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
-      <Circles />
+    <div className="h-full bg-primary/30 py-32 text-center xl:text-left ">
+      <div className="max-w-[1100px] max-h-[800px] mx-auto">
+        <Circles />
 
-      {/* avatar img */}
-      <motion.div
-        variants={fadeIn("right", 0.2)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="hidden xl:flex absolute bottom-0 -left-[370px]"
-      >
-        <Avatar />
-      </motion.div>
-
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
-        {/* text */}
-        <div className="flex-1 flex flex-col justify-center">
-          <motion.h2
-            variants={fadeIn("right", 0.2)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="h2"
-          >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
-          </motion.h2>
-          <motion.p
-            variants={fadeIn("right", 0.4)}
-            initial="hidden"
-            animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
-          >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
-          </motion.p>
-
-          {/* counters */}
-          <motion.div
-            variants={fadeIn("right", 0.6)}
-            initial="hidden"
-            animate="show"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
-          >
-            <div className="flex flex-1 xl:gap-x-6">
-              {/* experience */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of experience.
-                </div>
-              </div>
-
-              {/* clients */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients.
-                </div>
-              </div>
-
-              {/* projects */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects.
-                </div>
-              </div>
-
-              {/* awards */}
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* info */}
+        {/* avatar img */}
         <motion.div
-          variants={fadeIn("left", 0.4)}
+          variants={fadeIn("right", 0.2)}
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+          className="hidden xl:flex absolute bottom-0 -left-[350px]"
         >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
-            {aboutData.map((item, itemI) => (
-              <div
-                key={itemI}
-                className={`${
-                  index === itemI &&
-                  "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
-                onClick={() => setIndex(itemI)}
-              >
-                {item.title}
-              </div>
-            ))}
-          </div>
-
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
-            {aboutData[index].info.map((item, itemI) => (
-              <div
-                key={itemI}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-center text-white/60"
-              >
-                {/* title */}
-                <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>{item.stage}</div>
-
-                <div className="flex gap-x-4">
-                  {/* icons */}
-                  {item.icons?.map((Icon, iconI) => (
-                    <div key={iconI} className="text-2xl text-white">
-                      <Icon />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <Avatar />
         </motion.div>
+
+        <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 mt-5">
+
+          {/* LEFT SECTION (2/5) */}
+          <div className="w-full xl:w-1/2 flex flex-col justify-center">
+            <div className="xl:pl-8">
+              <motion.h2
+                variants={fadeIn("right", 0.2)}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                className="h2"
+              >
+                <span className="text-accent">Interested in </span>
+              </motion.h2>
+
+              <motion.p
+                variants={fadeIn("right", 0.4)}
+                initial="hidden"
+                animate="show"
+                className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-8 px-2 xl:px-0 text-3xl"
+              >
+                Machine Learning, Embedded Systems & IOT, Robotics, Full Stack
+                Development
+              </motion.p>
+            </div>
+
+
+            {/* counters */}
+            <div className="container mx-auto mt-12 flex justify-center">
+              <motion.div
+                variants={fadeIn("right", 0.6)}
+                initial="hidden"
+                animate="show"
+                className="w-full max-w-[900px]"
+              >
+                <div className="flex justify-between gap-x-6">
+
+                  {/* Completed Projects */}
+                  {/* <div className="relative flex-1 text-center after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                    <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                      <CountUp start={0} end={4} duration={3} />
+                    </div>
+                    <div className="text-xs uppercase tracking-[1px] leading-[1.4]">
+                      Completed Projects
+                    </div>
+                  </div> */}
+
+                  {/* Technologies */}
+                  <div className="relative flex-1 text-center after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                    <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                      <CountUp start={0} end={10} duration={3} />
+                    </div>
+                    <div className="text-xs uppercase tracking-[1px] leading-[1.4]">
+                      Technologies Used
+                    </div>
+                  </div>
+
+                  {/* Focus Areas */}
+                  <div className="relative flex-1 text-center after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                    <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                      <CountUp start={0} end={4} duration={3} />
+                    </div>
+                    <div className="text-xs uppercase tracking-[1px] leading-[1.4]">
+                      Focus Areas
+                    </div>
+                  </div>
+
+                  {/* Experience */}
+                  <div className="flex-1 text-center">
+                    <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                      <CountUp start={0} end={3} duration={3} />
+                    </div>
+                    <div className="text-xs uppercase tracking-[1px] leading-[1.4]">
+                      Years Learning & Practice
+                    </div>
+                  </div>
+
+                </div>
+              </motion.div>
+            </div>
+
+          </div>
+
+          {/* RIGHT SECTION (3/5) */}
+          <motion.div
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="w-full xl:w-1/2 flex flex-col h-[450px]"
+          >
+            <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
+              {aboutData.map((item, itemI) => (
+                <div
+                  key={itemI}
+                  className={`${index === itemI &&
+                    "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
+                    } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
+                  onClick={() => setIndex(itemI)}
+                >
+                  {item.title}
+                </div>
+              ))}
+            </div>
+
+            <div className="py-2 xl:py-6 flex flex-col gap-y-4 w-full">
+              {aboutData[index].info.map((item, itemI) => (
+                <div
+                  key={itemI}
+                  className="w-full flex flex-col text-left text-white/70 border-b border-white/10 pb-3"
+                >
+                  {/* Title */}
+                  <div className="font-medium text-white">{item.title}</div>
+
+                  {/* Description */}
+                  <div className="text-sm mt-1">{item.stage}</div>
+
+                  {/* Icons (if available) */}
+                  <div className="flex gap-x-4 mt-2">
+                    {item.icons?.map((Icon, iconI) => (
+                      <div key={iconI} className="text-xl text-accent">
+                        <Icon />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+        {/* COUNTER SECTION (CENTERED) */}
+
       </div>
     </div>
   );

@@ -2,23 +2,24 @@ import Link from "next/link";
 
 import {
   RiYoutubeLine,
-  RiInstagramLine,
   RiFacebookLine,
-  RiDribbbleLine,
+  RiWhatsappLine,
   RiGithubLine,
-  RiPinterestLine,
+  RiLinkedinLine,
 } from "react-icons/ri";
 
+import { SiGmail } from "react-icons/si";
+
 export const socialData = [
+  // {
+  //   name: "YouTube",
+  //   link: "https://youtube.com",
+  //   Icon: RiYoutubeLine,
+  // },
   {
-    name: "YouTube",
-    link: "https://youtube.com",
-    Icon: RiYoutubeLine,
-  },
-  {
-    name: "Instagram",
-    link: "https://instagram.com",
-    Icon: RiInstagramLine,
+    name: "Gmail",
+    link: "mailto:azeemhaleem451@gmail.com",
+    Icon: SiGmail,
   },
   {
     name: "Facebook",
@@ -26,18 +27,18 @@ export const socialData = [
     Icon: RiFacebookLine,
   },
   {
-    name: "Dribbble",
-    link: "https://dribbble.com",
-    Icon: RiDribbbleLine,
+    name: "Whatsapp",
+    link: "https://wa.me/qr/EEQ2GILDDRGNK1",
+    Icon: RiWhatsappLine,
   },
   {
-    name: "Pinterest",
-    link: "https://pinterest.com",
-    Icon: RiPinterestLine,
+    name: "LinkedIn",
+    link: "http://linkedin.com/in/azeemhaleem",
+    Icon: RiLinkedinLine,
   },
   {
     name: "Github",
-    link: "https://github.com/sanidhyy/modern-portfolio",
+    link: "https://github.com/Azeemhaleem",
     Icon: RiGithubLine,
   },
 ];
@@ -52,11 +53,10 @@ const Socials = () => {
           href={social.link}
           target="_blank"
           rel="noreferrer noopener"
-          className={`${
-            social.name === "Github"
-              ? "bg-accent rounded-full p-[5px] hover:text-white"
-              : "hover:text-accent"
-          } transition-all duration-300`}
+          className={`${social.name === "Github"
+            ? "bg-accent rounded-full p-[5px] hover:text-white"
+            : "hover:text-accent"
+            } transition-all duration-300`}
         >
           <social.Icon aria-hidden />
           <span className="sr-only">{social.name}</span>

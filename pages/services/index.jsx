@@ -1,53 +1,88 @@
 import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
 
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import ServiceSlider from "../../components/ServiceSlider";
-import { fadeIn } from "../../variants";
 
-export const serviceData = [];
+// Skills Data
+const skillsData = [
+  {
+    title: "Front-End Development",
+    percent: 85,
+    skills: ["React", "Next", "React Native", "HTML", "SCSS", "Tailwind", "Bootstrap"],
+  },
+  {
+    title: "Back-End Development",
+    percent: 90,
+    skills: ["Node.js", "Express.js", "FastAPI", "Django"],
+  },
+  {
+    title: "Machine Learning",
+    percent: 75,
+    skills: ["TensorFlow", "Scikit-learn", "Pandas", "NumPy"],
+  },
+  {
+    title: "Artificial Intelligence",
+    percent: 90,
+    skills: ["Deep Learning", "Computer Vision", "NLP"],
+  },
+  {
+    title: "Embedded Systems & IOT",
+    percent: 90,
+    skills: ["Arduino", "ESP32", "Raspberry Pi", "Sensor Integration"],
+  },
+  {
+    title: "Database Ops",
+    percent: 90,
+    skills: ["MongoDB", "PostgreSQL", "MySQL"],
+  },
+];
 
 const Services = () => {
   return (
-    <div className="h-full bg-primary/30 py-36 flex items-center">
+    <div className="h-full bg-primary/30 py-24 flex items-center">
       <Circles />
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-x-8">
-          {/* text */}
-          <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
+
+      <div className="w-[85%] mx-auto max-w-[1500px]">
+        {/* <div className="flex flex-col xl:flex-row gap-x-8"> */}
+        <div className="">
+
+
+          {/* LEFT TEXT */}
+          <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mt-5 mb-14 xl:mb-0">
             <motion.h2
               variants={fadeIn("up", 0.2)}
               initial="hidden"
               animate="show"
-              exit="hidden"
-              className="h2 xl:mt-8"
+              className="h2 xl:mt-10"
             >
-              My services <span className="text-accent">.</span>
+              Technical <span className="text-accent">Skills</span>
             </motion.h2>
+
             <motion.p
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               animate="show"
-              exit="hidden"
-              className="mb-4 max-w-[400px] mx-auto lg:mx-0"
+              className="text-xl font-semibold mx-auto lg:mx-0 lg:pl-40"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              tempora eligendi, quisquam tempore sint reiciendis.
+              Swipe to explore more →
             </motion.p>
           </div>
 
-          {/* slider */}
+          {/* RIGHT SLIDER */}
           <motion.div
             variants={fadeIn("down", 0.6)}
             initial="hidden"
             animate="show"
-            exit="hidden"
-            className="w-full xl:max-w-[65%]"
+            className="w-[95%] mt-8 mx-auto"
           >
-            <ServiceSlider />
+            <ServiceSlider serviceData={skillsData} />
           </motion.div>
+
         </div>
       </div>
+
       <Bulb />
     </div>
   );
